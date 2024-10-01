@@ -181,20 +181,9 @@ La aplicación tiene las siguientes rutas accesibles:
 -   `GET /notifications`: Obtener todas las notificaciones.
 -   `POST /notifications/{notify}`: Marcar notificación como leída.
 
-## Middleware
+## Filtros de búsquedas
 
--   **auth:** Protege las rutas que requieren autenticación.
--   **EnsureAdmin:** Middleware personalizado para proteger rutas que requieren privilegios de administrador.
-
-## CSRF Token
-
-Para obtener el token CSRF para formularios seguros:
-
--   `GET /csrf-token`
-
-## Filtros de búsqueda en Casas
-
-La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
+### La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla houses.
 -   **features:** Filtra por características específicas.
@@ -211,11 +200,11 @@ La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
 -   **orderBy:** Ordena los resultados por el campo `id`.
 -   **orderByViewed:** Ordena los resultados por el campo `viewed`.
 
-La ruta `GET /notifications` permite aplicar los siguientes filtros en las solicitudes:
+### La ruta `GET /notifications` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **limit:** Limita la cantidad de resultados.
 
-La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
+### La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla users.
 -   **email:** Filtra por email de la tabla users.
@@ -223,7 +212,7 @@ La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
 -   **role:** Filtra por role de la tabla users.
 -   **limit:** Limita la cantidad de resultados.
 
-La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
+### La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla visits.
 -   **graphic:** Solicitud especial para graficos al crear un conteo general de la tabla visits.
@@ -231,3 +220,14 @@ La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
 -   **visited:** Filtra por los datos ya visitados de la tabla visits.
 -   **pending:** Filtra por los datos ya pendiente a visitas de la tabla visits.
 -   **limit:** Limita la cantidad de resultados.
+
+## Middleware
+
+-   **auth:** Protege las rutas que requieren autenticación.
+-   **EnsureAdmin:** Middleware personalizado para proteger rutas que requieren privilegios de administrador.
+
+## CSRF Token
+
+Para obtener el token CSRF para formularios seguros:
+
+-   `GET /csrf-token`
