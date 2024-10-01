@@ -119,7 +119,7 @@ npm run dev
 }
 ```
 
-### Vistas del Frontend
+## Vistas del Frontend
 
 La aplicación tiene las siguientes rutas accesibles:
 
