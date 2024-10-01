@@ -181,6 +181,12 @@ La aplicación tiene las siguientes rutas accesibles:
 -   `GET /notifications`: Obtener todas las notificaciones.
 -   `POST /notifications/{notify}`: Marcar notificación como leída.
 
+## CSRF Token
+
+Para obtener el token CSRF para formularios seguros:
+
+-   `GET /csrf-token`
+
 ## Filtros de búsquedas
 
 #### La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
@@ -221,17 +227,6 @@ La aplicación tiene las siguientes rutas accesibles:
 -   **pending:** Filtra por los datos ya pendiente a visitas de la tabla visits.
 -   **limit:** Limita la cantidad de resultados.
 
-## Middleware
-
--   **auth:** Protege las rutas que requieren autenticación.
--   **EnsureAdmin:** Middleware personalizado para proteger rutas que requieren privilegios de administrador.
-
-## CSRF Token
-
-Para obtener el token CSRF para formularios seguros:
-
--   `GET /csrf-token`
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Apache License 2.0. Consulta el archivo [LICENSE](LICENSE) para más detalles.
@@ -242,4 +237,4 @@ Si tienes alguna pregunta o sugerencia, por favor contacta a [Nestor Daniel](mai
 
 ---
 
-¡Gracias por usar EduPlus!
+¡Gracias por usar Real State Villa!
