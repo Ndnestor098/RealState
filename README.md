@@ -183,7 +183,7 @@ La aplicación tiene las siguientes rutas accesibles:
 
 ## Filtros de búsquedas
 
-# La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
+#### La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla houses.
 -   **features:** Filtra por características específicas.
@@ -200,11 +200,11 @@ La aplicación tiene las siguientes rutas accesibles:
 -   **orderBy:** Ordena los resultados por el campo `id`.
 -   **orderByViewed:** Ordena los resultados por el campo `viewed`.
 
-# La ruta `GET /notifications` permite aplicar los siguientes filtros en las solicitudes:
+#### La ruta `GET /notifications` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **limit:** Limita la cantidad de resultados.
 
-# La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
+#### La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla users.
 -   **email:** Filtra por email de la tabla users.
@@ -212,7 +212,7 @@ La aplicación tiene las siguientes rutas accesibles:
 -   **role:** Filtra por role de la tabla users.
 -   **limit:** Limita la cantidad de resultados.
 
-# La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
+#### La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
 
 -   **id:** Filtra por ID de la tabla visits.
 -   **graphic:** Solicitud especial para graficos al crear un conteo general de la tabla visits.
