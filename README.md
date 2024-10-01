@@ -181,11 +181,9 @@ La aplicación tiene las siguientes rutas accesibles:
 -   `GET /notifications`: Obtener todas las notificaciones.
 -   `POST /notifications/{notify}`: Marcar notificación como leída.
 
-## CSRF Token
+### CSRF Token
 
-Para obtener el token CSRF para formularios seguros:
-
--   `GET /csrf-token`
+-   `GET /csrf-token`: Para obtener el token CSRF para formularios seguros.
 
 ## Filtros de búsquedas
 
