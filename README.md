@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/Ndnestor098/RealState" target="_blank"><img src="https://ndnestor098.github.io/WebCV/assets/img/Villa.png" width="400" alt="Real State Logo"></a></p>
+<p align="center"><a href="https://github.com/Ndnestor098/RealState" target="_blank"><img src="https://ndnestor098.github.io/WebCV/assets/img/Villa.png" width="100%" alt="Real State Logo"></a></p>
 
 # Real State Villa
 
@@ -231,3 +231,15 @@ La aplicación tiene las siguientes rutas accesibles:
 Para obtener el token CSRF para formularios seguros:
 
 -   `GET /csrf-token`
+
+## Licencia
+
+Este proyecto está licenciado bajo la Apache License 2.0. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Contacto
+
+Si tienes alguna pregunta o sugerencia, por favor contacta a [Nestor Daniel](mailto:trabajo.nestor.098@gmail.com).
+
+---
+
+¡Gracias por usar EduPlus!
