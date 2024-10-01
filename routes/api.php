@@ -28,11 +28,11 @@ Route::controller(FeatureController::class)->group(function () {
 });
 
 Route::controller(VisitController::class)->group(function () {
-    Route::get('/visit', 'index')->name('visit');
-    Route::put('/visit/pending/{visit}', 'markAsPending')->name('visit.mark.pending');
-    Route::put('/visit/visited/{visit}', 'markAsVisited')->name('visit.mark.pending');
+    Route::get('/visit', 'index')->name('visit')->middleware(['web', 'auth']);
+    Route::put('/visit/pending/{visit}', 'markAsPending')->name('visit.mark.pending')->middleware(['web', 'auth']);
+    Route::put('/visit/visited/{visit}', 'markAsVisited')->name('visit.mark.pending')->middleware(['web', 'auth']);
     Route::post('/visit/{house}', 'create')->name('visit.create');
-    Route::delete('/visit/delete/{visit_id}', 'delete')->name('visit.delete');
+    Route::delete('/visit/delete/{visit_id}', 'delete')->name('visit.delete')->middleware(['web', 'auth']);
 });
 
 Route::post('/login', [LoginController::class, 'login'])->middleware('web')->name('login');

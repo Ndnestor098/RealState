@@ -1,66 +1,233 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://github.com/Ndnestor098/RealState" target="_blank"><img src="https://ndnestor098.github.io/WebCV/assets/img/Villa.png" width="400" alt="Real State Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Real State Villa
 
-## About Laravel
+## Descripción
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Real State Villa es una aplicación web desarrollada con Laravel y React, donde Laravel actúa como la API backend y React como el frontend. Esta aplicación está diseñada para gestionar bienes raíces, incluyendo funcionalidades como la visualización de casas, características de las propiedades, visitas, y notificaciones.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologías
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Backend:** Laravel 11.9
+-   **Frontend:** React 18.2
+-   **Base de datos:** MySQL
+-   **Autenticación:** Laravel Sanctum
 
-## Learning Laravel
+## Requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+-   **PHP:** ^8.2
+-   **Node.js y NPM:** Requeridos para la instalación de dependencias del frontend
+-   **Composer:** Para manejar dependencias de PHP
+-   **MySQL:** Para almacenar la base de datos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Instalación
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clona el repositorio:
 
-## Laravel Sponsors
+```bash
+git https://github.com/Ndnestor098/RealState.git
+cd RealState
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Configura el entorno:
 
-### Premium Partners
+    Copia el archivo `.env.example` a `.env` y ajusta las configuraciones necesarias para la base de datos y otros servicios.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+cp .env.example .env
+```
 
-## Contributing
+3. Instala las dependencias de PHP y Node.js:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+npm install
+```
 
-## Code of Conduct
+4. Genera la clave de la aplicación:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+5. Ejecuta las migraciones de la base de datos:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan migrate
+```
 
-## License
+6. Inicia el servidor de desarrollo:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan serve
+npm run dev
+```
+
+## Dependencias principales
+
+### Backend
+
+```json
+"require": {
+    "php": "^8.2",
+    "laravel/framework": "^11.9",
+    "laravel/sanctum": "^4.0",
+    "laravel/tinker": "^2.9",
+    "laravel/ui": "^4.5"
+}
+```
+
+### Frontend
+
+```json
+"dependencies": {
+    "flatpickr": "^4.6.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-bootstrap": "^2.10.4",
+    "react-flatpickr": "^3.10.13",
+    "react-image-gallery": "^1.3.0",
+    "react-paginate": "^8.2.0",
+    "react-router-dom": "^6.26.1",
+    "recharts": "^2.12.7",
+    "suneditor": "^2.47.0",
+    "swiper": "^11.1.14"
+}
+```
+
+### Dev Dependencies
+
+```json
+"devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-transform-runtime": "^7.25.4",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@popperjs/core": "^2.11.6",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "axios": "^1.7.4",
+    "bootstrap": "^5.3.3",
+    "eslint": "^9.10.0",
+    "eslint-plugin-react": "^7.35.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "laravel-vite-plugin": "^1.0",
+    "sass": "^1.56.1",
+    "vite": "^5.4.3"
+}
+```
+
+### Vistas del Frontend
+
+La aplicación tiene las siguientes rutas accesibles:
+
+#### Rutas Públicas
+
+-   **`/`**: Ruta principal (Componente: `Home`).
+-   **`/properties`**: Lista de propiedades (Componente: `Properties`).
+-   **`/contact`**: Página de contacto (Componente: `Contact`).
+-   **`/property-details/:id`**: Detalles de una propiedad específica por su ID (Componente: `PropertiesDetails`).
+-   **`/visit/:id`**: Página para agendar una visita con el ID de la propiedad (Componente: `MakeVisit`).
+
+#### Rutas del Administrador
+
+-   **`/admin-login`**: Ruta para el login del administrador (Componente: `LoginAdministrator`).
+-   **`/dashboard`**: Panel principal del administrador protegido con `AuthProvider` (Componente: `Dashboard`).
+-   **`/dashboard/users`**: Gestión de usuarios por parte del administrador (Componente: `UsersAdministrator`).
+-   **`/dashboard/users/modify/:id`**: Modificar usuario por su ID (Componente: `ModifyUsers`).
+-   **`/dashboard/users/create`**: Crear un nuevo usuario (Componente: `CreateUsers`).
+-   **`/dashboard/properties`**: Gestión de propiedades por parte del administrador (Componente: `PropertiesAdministrator`).
+-   **`/dashboard/properties/modify/:id`**: Modificar una propiedad por su ID (Componente: `ModifyProperties`).
+-   **`/dashboard/properties/create`**: Crear una nueva propiedad (Componente: `CreateProperties`).
+-   **`/dashboard/visit`**: Gestión de visitas por parte del administrador (Componente: `VisitAdministrator`).
+
+## Rutas de la API
+
+### Autenticación
+
+-   `POST /login`: Iniciar sesión.
+-   `POST /logout`: Cerrar sesión.
+
+### Usuarios
+
+-   `GET /users`: Obtener todos los usuarios.
+-   `POST /users/create`: Crear un nuevo usuario.
+-   `POST /users/update/{id}`: Actualizar un usuario existente.
+-   `DELETE /users/delete/{id}`: Eliminar un usuario.
+
+### Casas
+
+-   `GET /houses`: Obtener todas las casas.
+-   `POST /houses/create`: Crear una nueva casa.
+-   `POST /houses/update/{house}`: Actualizar una casa.
+-   `DELETE /houses/delete/{house_id}`: Eliminar una casa.
+
+### Características
+
+-   `GET /features`: Obtener todas las características.
+
+### Visitas
+
+-   `GET /visit`: Obtener todas las visitas.
+-   `PUT /visit/pending/{visit}`: Marcar visita como pendiente.
+-   `PUT /visit/visited/{visit}`: Marcar visita como realizada.
+-   `POST /visit/{house}`: Crear una visita.
+-   `DELETE /visit/delete/{visit_id}`: Eliminar una visita.
+
+### Notificaciones
+
+-   `GET /notifications`: Obtener todas las notificaciones.
+-   `POST /notifications/{notify}`: Marcar notificación como leída.
+
+## Middleware
+
+-   **auth:** Protege las rutas que requieren autenticación.
+-   **EnsureAdmin:** Middleware personalizado para proteger rutas que requieren privilegios de administrador.
+
+## CSRF Token
+
+Para obtener el token CSRF para formularios seguros:
+
+-   `GET /csrf-token`
+
+## Filtros de búsqueda en Casas
+
+La ruta `GET /houses` permite aplicar los siguientes filtros en las solicitudes:
+
+-   **id:** Filtra por ID de la tabla houses.
+-   **features:** Filtra por características específicas.
+-   **maxPrice:** Precio máximo de la tabla houses.
+-   **minPrice:** Precio mínimo de la tabla houses.
+-   **minSize:** Tamaño mínimo de la tabla houses.
+-   **maxSize:** Tamaño máximo de la tabla houses.
+-   **quarter:** Filtra por número de cuartos.
+-   **bathroom:** Filtra por número de baños.
+-   **search:** Permite buscar por palabras clave.
+-   **type_house:** Filtra por tipo de casa.
+-   **published:** Filtra por casas publicadas.
+-   **limit:** Limita la cantidad de resultados.
+-   **orderBy:** Ordena los resultados por el campo `id`.
+-   **orderByViewed:** Ordena los resultados por el campo `viewed`.
+
+La ruta `GET /notifications` permite aplicar los siguientes filtros en las solicitudes:
+
+-   **limit:** Limita la cantidad de resultados.
+
+La ruta `GET /users` permite aplicar los siguientes filtros en las solicitudes:
+
+-   **id:** Filtra por ID de la tabla users.
+-   **email:** Filtra por email de la tabla users.
+-   **name:** Filtra por name de la tabla users.
+-   **role:** Filtra por role de la tabla users.
+-   **limit:** Limita la cantidad de resultados.
+
+La ruta `GET /visit` permite aplicar los siguientes filtros en las solicitudes:
+
+-   **id:** Filtra por ID de la tabla visits.
+-   **graphic:** Solicitud especial para graficos al crear un conteo general de la tabla visits.
+-   **search:** Filtra por name de la tabla visits.
+-   **visited:** Filtra por los datos ya visitados de la tabla visits.
+-   **pending:** Filtra por los datos ya pendiente a visitas de la tabla visits.
+-   **limit:** Limita la cantidad de resultados.
