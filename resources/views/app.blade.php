@@ -47,13 +47,14 @@
         <!-- Scripts -->
         @routes
         @viteReactRefresh
-        @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
+        @vite(['resources/js/app.jsx'])
         @vite('resources/css/fontawesome.css')
         @vite('resources/css/templatemo-villa-agency.css')
         @vite('resources/css/owl.css')
         @vite('resources/css/animate.css')
         @vite('resources/css/style.css')
         @inertiaHead
+
     </head>
     <body class="font-sans antialiased">
         @inertia
