@@ -1,0 +1,11 @@
+services:
+  realstate:
+    container_name: realstate
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/var/www
+    ports:
+      - "9000"
+    restart : always
