@@ -15,7 +15,7 @@ export default function Login() {
         e.preventDefault(); // Previene el comportamiento por defecto del formulario
         setIsSubmitting(true);
 
-        post("https://villa.ndnestor.com/login", {
+        post("/login", {
             onError : ()=>{
                 setIsSubmitting(false);
             },
