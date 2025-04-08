@@ -3,7 +3,7 @@ import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    base: 'https://villa.ndnestor.com/build/',
+    base: '/build/',
     plugins: [
         laravel({
             input: [
@@ -43,5 +43,10 @@ export default defineConfig({
         host: '0.0.0.0',
         port: 5173,
         strictPort: true,
-    }
+    },
+    resolve: {
+        alias: {
+            '@': '/resources/js',
+        },
+    },
 });
