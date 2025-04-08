@@ -20,16 +20,18 @@ class DatabaseSeeder extends Seeder
             FeatureSeeder::class,
             TypeHouseSeeder::class,
 
-            HouseSeeder::class,
-            VisitSeeder::class,
+            // HouseSeeder::class,
+            // VisitSeeder::class,
             PermissionSeeder::class,
             RoleSeeder::class,
         ]);
 
-        User::factory()->create([
+        $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => Hash::make('test')
         ]);
+
+        $user->roles()->attach(1);
     }
 }
