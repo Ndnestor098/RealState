@@ -8,9 +8,10 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.jsx'],
             refresh: true,
         }),
+        react(),
     ],
     server: {
-        https: true, 
+        https: true,
         host: 'villa.ndnestor.com',
     },
     build: {
