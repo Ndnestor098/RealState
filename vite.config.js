@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => {
         },
         server: {
             https: true,
-            host: 'villa.ndnestor.com',
+            host: true,
         },
     };
 });
