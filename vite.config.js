@@ -21,7 +21,6 @@ export default defineConfig(({ mode }) => {
     
                 ],
                 ssr: 'resources/js/ssr.jsx',
-                refresh: false,
                 input: ['resources/css/app.css', 'resources/js/app.jsx'],
                 refresh: true,
             }),
