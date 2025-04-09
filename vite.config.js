@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
                     'resources/css/style.css',
                 ],
                 refresh: true,
-                ssr: 'resources/js/ssr.jsx', // opcional, si usás SSR
+                ssr: 'resources/js/ssr.jsx',
             }),
             react(),
         ],

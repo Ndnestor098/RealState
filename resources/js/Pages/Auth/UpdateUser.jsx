@@ -181,7 +181,7 @@ export default function UpdateUser({ auth, user, roles, roles_id }) {  // Funci√
 
                     <span 
                         className="button-confirm" 
-                        style={{ margin: "0", paddingTop: "5px", textAlign: "center", margin: "0 auto 0 auto" }} 
+                        style={{ paddingTop: "5px", textAlign: "center", margin: "0 auto 0 auto" }} 
                         disabled={isSubmittingDelete} 
                         onClick={() => setConfirmDelete(true)}
                     >

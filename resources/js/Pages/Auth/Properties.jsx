@@ -33,7 +33,7 @@ export default function PropertiesAdministrator({auth, house }) {
                     </Link>
 
                     {/* Busqueda */}
-                    <div className="container-icon-filter" style={{ display:"flex", flexDirection:"column", alignItems:"center", flexDirection:"row", maxWidth:"500px", width:"100%"  }} >
+                    <div className="container-icon-filter" style={{ display:"flex", alignItems:"center", flexDirection:"row", maxWidth:"500px", width:"100%"  }} >
                     
                         <div className="group-search">
                             <input 
