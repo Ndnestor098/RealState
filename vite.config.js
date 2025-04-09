@@ -18,10 +18,9 @@ export default defineConfig(({ mode }) => {
                     'resources/css/flex-slider.css',
                     'resources/css/owl.css',
                     'resources/css/style.css',
-    
+                    'resources/css/app.css',
                 ],
                 ssr: 'resources/js/ssr.jsx',
-                input: ['resources/css/app.css', 'resources/js/app.jsx'],
                 refresh: true,
             }),
             react(),
