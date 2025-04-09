@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
 
     return {
-        base: `${env.VITE_URL}/build/`, // 👈 Esto es la clave
+        base: '/build/',
         plugins: [
             laravel({
                 input: [
@@ -19,13 +19,16 @@ export default defineConfig(({ mode }) => {
                     'resources/css/owl.css',
                     'resources/css/style.css',
                 ],
-                ssr: 'resources/js/ssr.jsx',
-                refresh: false,
+                refresh: true,
+                ssr: 'resources/js/ssr.jsx', // opcional, si usás SSR
             }),
             react(),
         ],
         build: {
+            manifest: true,
+            outDir: 'public/build',
             rollupOptions: {
+                input: 'resources/js/app.jsx',
                 output: {
                     manualChunks(id) {
                         if (id.includes('node_modules')) {
@@ -38,18 +41,16 @@ export default defineConfig(({ mode }) => {
                         }
                     }
                 }
-            },
-            manifest: true,
-            outDir: 'public/build',
-        },
-        server: {
-            https: true,
-            host: 'villa.ndnestor.com',
+            }
         },
         resolve: {
             alias: {
                 '@': '/resources/js',
             },
+        },
+        server: {
+            https: true,
+            host: 'villa.ndnestor.com',
         },
     };
 });
