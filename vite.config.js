@@ -18,9 +18,12 @@ export default defineConfig(({ mode }) => {
                     'resources/css/flex-slider.css',
                     'resources/css/owl.css',
                     'resources/css/style.css',
+    
                 ],
-                refresh: true,
                 ssr: 'resources/js/ssr.jsx',
+                refresh: false,
+                input: ['resources/css/app.css', 'resources/js/app.jsx'],
+                refresh: true,
             }),
             react(),
         ],
@@ -50,7 +53,7 @@ export default defineConfig(({ mode }) => {
         },
         server: {
             https: true,
-            host: true,
+            host: 'villa.ndnestor.com',
         },
     };
 });
