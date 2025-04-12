@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         Cache::flush();
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect(route('dashboard'));
     }
 
     /**

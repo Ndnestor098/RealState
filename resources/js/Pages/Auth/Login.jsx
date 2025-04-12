@@ -15,10 +15,18 @@ export default function Login() {
         e.preventDefault(); // Previene el comportamiento por defecto del formulario
         setIsSubmitting(true);
 
-        post('/login', {
+        post("/login", {
             onError : ()=>{
                 setIsSubmitting(false);
             },
+            onSuccess : (page) => {
+                setIsSubmitting(false);
+                if(page.props.status === 200){
+                    window.location.href = "/dashboard"; 
+                }else{
+                    alert("Error en el inicio de sesión");
+                }
+            }
         }) 
     };
 
@@ -31,7 +39,7 @@ export default function Login() {
 
             <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <div style={{ maxHeight: "400px" }}>
-                    <form method="post" action="/api/login" className="form" id="form" onSubmit={handleSubmit}>
+                    <form method="post" className="form" id="form" onSubmit={handleSubmit}>
                         <div className="title">
                             Welcome,
                             <br />

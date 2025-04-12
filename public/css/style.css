@@ -1,0 +1,138 @@
+.container-all{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.content-notify{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+}
+.card-notify {
+    width: 100%;
+    background-color: #f2f3f7;
+    border-radius: 0.75em;
+    cursor: pointer;
+    transition: ease 0.2s;
+    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
+    border: 1.5px solid #f2f3f7;
+}
+
+.card-notify:hover {
+    background-color: #d3ddf1;
+    border: 1.5px solid #1677ff;
+}
+
+.container-notify {
+    margin-top: 1.25em;
+    margin-bottom: 1.375em;
+    margin-left: 1.375em;
+    margin-right: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+}
+
+.status-ind-notify {
+    width: 0.625em;
+    height: 0.625em;
+    background-color: #ff0000;
+    margin: 0.575em 0;
+    border-radius: 0.5em;
+}
+
+.text-wrap-notify {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    color: #333;
+    margin: 0;
+}
+
+.text-content-notify{
+    margin: 0;
+}
+
+.time-notify {
+    font-size: 0.875em;
+    color: #777;
+    margin: 0;
+}
+
+.text-link-notify {
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    margin: 0;
+}
+
+.button-wrap-notify {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+}
+
+.secondary-cta-notify {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    cursor: pointer;
+}
+
+.primary-cta-notify {
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #1677ff;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+.button-notify:hover {
+    text-decoration: underline;
+}
+
+.right-notify {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875em;
+}
+
+.container-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-graphic{
+    display: flex;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    justify-content: space-around;
+    padding: 0 10px;
+}
+
+.content-properties{
+    padding-right: 10px;
+    max-height: 285px;
+    height: 100%;
+}
+
+.center-spinner{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

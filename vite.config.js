@@ -1,41 +1,57 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
-export default defineConfig({
-    base: '/build/',
-    plugins: [
-        laravel({
-            input: [
-                'resources/js/app.jsx',
-                'resources/css/fontawesome.css',
-                'resources/css/templatemo-villa-agency.css',
-                'resources/css/animate.css',
-                'resources/css/flex-slider.css',
-                'resources/css/owl.css',
-                'resources/css/style.css',
+export default defineConfig(({ mode }) => {
+    const env = loadEnv(mode, process.cwd(), '');
 
-            ],
-            ssr: 'resources/js/ssr.jsx',
-            refresh: false,
-        }),
-        react(),
-    ],
-    build: {
-        rollupOptions: {
-            output: {
-                manualChunks(id) {
-                    if (id.includes('node_modules')) {
-                        return 'vendor'; // Mantener vendor separado
-                    }
-    
-                    // Divide los componentes grandes
-                    if (id.includes('resources/js/components/')) {
-                        const name = id.split('/').pop().replace('.jsx', '');
-                        return `components/${name}`; // Crea un chunk por cada componente
+    return {
+        base: '/build/',
+        plugins: [
+            laravel({
+                input: [
+                    'resources/js/app.jsx',
+                    'resources/css/fontawesome.css',
+                    'resources/css/templatemo-villa-agency.css',
+                    'resources/css/animate.css',
+                    'resources/css/flex-slider.css',
+                    'resources/css/owl.css',
+                    'resources/css/style.css',
+                    'resources/css/app.css',
+                ],
+                ssr: 'resources/js/ssr.jsx',
+                refresh: true,
+            }),
+            react(),
+        ],
+        build: {
+            manifest: true,
+            outDir: 'public/build',
+            rollupOptions: {
+                input: 'resources/js/app.jsx',
+                output: {
+                    manualChunks(id) {
+                        if (id.includes('node_modules')) {
+                            return 'vendor';
+                        }
+
+                        if (id.includes('resources/js/components/')) {
+                            const name = path.basename(id).replace('.jsx', '');
+                            return `components/${name}`;
+                        }
                     }
                 }
             }
-        }
-    }
+        },
+        resolve: {
+            alias: {
+                '@': '/resources/js',
+            },
+        },
+        server: {
+            https: true,
+            host: 'villa.ndnestor.com',
+        },
+    };
 });
