@@ -47,11 +47,6 @@
         <!-- Scripts -->
         @routes
         @viteReactRefresh
-        {{-- <link rel="stylesheet" href="/css/fontawesome.css">
-        <link rel="stylesheet" href="/css/templatemo-villa-agency.css">
-        <link rel="stylesheet" href="/css/owl.css">
-        <link rel="stylesheet" href="/css/animate.css">
-        <link rel="stylesheet" href="/css/style.css"> --}}
         @vite(['resources/js/app.jsx'])
         @vite('resources/css/fontawesome.css')
         @vite('resources/css/templatemo-villa-agency.css')
