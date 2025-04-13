@@ -72,10 +72,10 @@ export function Header () {
             </div>
 
             <header className="header-area header-sticky menu" style={{width: "100%", height: "100px"}}>
-                <div className="container">
+                <div className="container" style={{ width: "100% !important;" }}>
                     <div className="row">
                         <div className="col-12">
-                            <nav className="main-nav">
+                            <nav className="main-nav" style={{ overflow: "visible" }}>
                                 {/* ***** Logo Start ***** */}
                                 <Link href='/' className="logo">
                                     <img src="/images/logo.png" alt="logo" style={{ width:"90px", padding:"5px" }} />

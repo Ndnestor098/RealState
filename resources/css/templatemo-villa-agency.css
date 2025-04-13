@@ -764,10 +764,10 @@ Header Style
     border-top: 1px solid #eee;
   }
   .header-area.header-sticky .nav {
-    margin-top: 80px !important;
+    margin-top: 90px !important;
   }
   .background-header.header-sticky .nav {
-    margin-top: 80px !important;
+    margin-top: 90px !important;
   }
   .header-area .main-nav .nav li {
     width: 100%;

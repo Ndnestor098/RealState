@@ -22,4 +22,4 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
-realstate_docker.tar
+realstate-container.tar
