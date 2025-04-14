@@ -13,6 +13,21 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
+    # CORS headers
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-XSRF-TOKEN"
+    Header set Access-Control-Allow-Credentials "true"
+    
+    # Preflight request handling (OPTIONS requests)
+    <IfModule mod_setenvif.c>
+        SetEnvIf Origin ".*" ALLOW_ORIGIN
+        Header set Access-Control-Allow-Origin "*" env=ALLOW_ORIGIN
+        Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE" env=ALLOW_ORIGIN
+        Header set Access-Control-Allow-Headers "Content-Type, X-Requested-With, X-XSRF-TOKEN" env=ALLOW_ORIGIN
+        Header set Access-Control-Allow-Credentials "true" env=ALLOW_ORIGIN
+    </IfModule>
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$

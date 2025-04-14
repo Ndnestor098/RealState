@@ -740,15 +740,13 @@ Header Style
   }
   .header-area .container {
     padding: 0px;
+    width: 100% !important;
   }
   .header-area .logo {
     margin-left: 0px;
   }
   .header-area .menu-trigger {
     display: block !important;
-  }
-  .header-area .main-nav {
-    overflow: hidden;
   }
   .header-area .main-nav .nav {
     float: none;
