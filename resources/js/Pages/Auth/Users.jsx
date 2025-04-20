@@ -62,14 +62,15 @@ export default function UsersAdministrator({ auth, users }) {
                 </Table>
 
                 <div className="justify-center pagination">
-                    {users.links.map((link, index) => (
-                        <Link
+                    {users.links.map((link, index) => {
+                        link.url = link.url ? link.url.replace('http://', 'https://').replace('/dashboard/dashboard', '/dashboard') : "#";
+                        return <Link
                             key={index}
                             href={link.url || "#"}
                             className={`px-3 py-1 mx-1 border font-medium border-2 ${link.active ? "bg-[#1e1e1e] text-white" : "bg-[#fafafa] border-[#1e1e1e] text-[#1e1e1e] hover:bg-[#f35525] transition-all duration-300"}`}
                             dangerouslySetInnerHTML={{ __html: link.label }}
                         />
-                    ))}
+                    })}
                 </div>
 
                 <div style={{ display: "flex", width: "100%", justifyContent: "center", margin: "20px 0" }}>

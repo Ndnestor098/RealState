@@ -26,14 +26,15 @@ export function Houses({house, features, typeHouse}) {
                 {/* Componente de navegación para la paginación */}
                 {/* <Navigate pageCount={pageCount} handlePageClick={handlePageClick} /> */}
                 <div className="justify-center pagination">
-                    {house.links.map((link, index) => (
+                    {house.links.map((link, index) => {
+                        link.url = link.url ? link.url.replace('http://', 'https://') : "#";
                         <Link
                             key={index}
                             href={link.url || "#"}
                             className={`px-3 py-1 mx-1 border font-medium border-2 ${link.active ? "bg-[#1e1e1e] text-white" : "bg-[#fafafa] border-[#1e1e1e] text-[#1e1e1e] hover:bg-[#f35525] transition-all duration-300"}`}
                             dangerouslySetInnerHTML={{ __html: link.label }}
                         />
-                    ))}
+                    })}
                 </div>
             </div>
         </div>

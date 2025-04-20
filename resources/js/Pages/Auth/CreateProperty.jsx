@@ -320,7 +320,7 @@ export default function CreateProperties({ auth, typeHouse, feature }) {
                                         value={item.id} 
                                         style={{ textTransform:"capitalize" }}  // Estilo para capitalizar el texto
                                         >
-                                            {item.type_house}
+                                            {item.name}
                                         </option>
                                     )
                                 })
