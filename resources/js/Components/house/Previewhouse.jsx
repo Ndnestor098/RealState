@@ -12,11 +12,11 @@ export function Previewhouse({ house }) {
                     <div className="content-info">
                         {/* Muestra el tipo de casa, verifica si house y house.type_house existen */}
                         <h1>
-                            { house.type_house.type_house }
+                            { house.type_house.name }
                         </h1>
                         {/* Muestra la descripción de la casa */}
                         <span>
-                            {house.description}
+                            Are you looking for the perfect place for your family? A home that makes you feel comfortable, safe, and happy. Look no further! We have amazing options that fit your lifestyle
                         </span>
                     </div>
                 </div>

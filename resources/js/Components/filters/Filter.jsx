@@ -213,15 +213,18 @@ export function Filter({features, typeHouse}) {
                 <div className="container-form">
                     <h6 className='text-base font-bold'>Type of House</h6>
                     <div>
-                        <select name="typeHouse" id="typeHouse" defaultValue={"0"} onChange={handleUrl}>
+                        <select
+                            name="typeHouse"
+                            id="typeHouse"
+                            value={searchParams.get("type_house") ? `typeHouse-${searchParams.get("type_house")}`: "0"}
+                            onChange={handleUrl}
+                        >
                             <option value="0" disabled>Select House</option>
-                            <option value="typeHouse-all">All</option>
-
                             {
                                 typeHouse.length > 0 ? typeHouse.map(item => {
                                     return (
-                                        <option key={item.id} value={"typeHouse-"+item.type_house}>
-                                            {item.type_house}
+                                        <option key={item.id} value={"typeHouse-"+item.name}>
+                                            {item.name}
                                         </option>
                                     )
                                 })

@@ -136,21 +136,9 @@ class House extends Model
     {
         // Verifica si el valor del tipo de casa no es nulo.
         if (!is_null($value)) {
-            // Si el valor es numérico, filtra por ID del tipo de casa.
-            if (is_numeric($value)) {
-                return $query->where('type_house_id', $value);
-            } else {
-                // Si el valor no es numérico, busca el tipo de casa por nombre.
-                $typeHouse = TypeHouse::where('type_house', $value)->first();
-
-                if ($typeHouse) {
-                    // Si se encuentra el tipo de casa, filtra por su ID.
-                    return $query->where('type_house_id', $typeHouse->id);
-                }
-
-                // Si no se encuentra el tipo de casa, retorna un query que nunca devuelve resultados.
-                return $query->whereRaw('1 = 0');
-            }
+            $query->whereHas('typeHouse', function ($query) use ($value) {
+                $query->where('name', $value);
+            });
         }
 
         return $query; // Si el valor es nulo, retorna el query sin modificaciones.

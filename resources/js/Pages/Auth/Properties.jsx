@@ -103,7 +103,7 @@ export default function PropertiesAdministrator({auth, house }) {
                 </Table>
 
                 <div style={{ display: "flex", width: "100%", justifyContent: "center", margin: "20px 0" }}>
-                    {visit.links.map((link, index) => {
+                    {house.links.map((link, index) => {
                         link.url = link.url ? link.url.replace('http://', 'https://').replace('/dashboard/dashboard', '/dashboard') : "#";
 
                         return <Link
