@@ -36,10 +36,6 @@ export default function UpdateUser({ auth, user, roles, roles_id }) {  // FunciÃ
         if (confirm("Do you want to continue?")) {
 
             router.delete('/dashboard/users/delete/'+user.id, {
-                onSuccess : () => {
-                    setIsSubmittingDelete(false);
-                    window.location.href = '/dashboard/users';
-                },
                 onError : () =>{    
                     setIsSubmittingDelete(false);
                 },

@@ -16,16 +16,26 @@ class Users
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $permissions = Auth::user()
-            ->load('roles.permissions')
-            ->roles
+        // Verifica si hay un usuario autenticado
+        if (!Auth::check()) {
+            return redirect(route('login'))->with('error', 'You must be logged in.');
+        }
+
+        $user = Auth::user();
+
+        // Carga relaciones de roles y permisos
+        $user->load('roles.permissions');
+
+        // Obtiene los nombres de todos los permisos del usuario
+        $permissions = $user->roles
             ->flatMap(function ($role) {
                 return $role->permissions->pluck('name');
             })
             ->unique()
             ->values();
 
-        if($permissions->contains('users')) {
+        // Verifica si tiene el permiso 'users'
+        if ($permissions->contains('users')) {
             return $next($request);
         }
 

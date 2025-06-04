@@ -173,9 +173,9 @@ class UserController extends Controller
      * 
      * @return \Inertia\Inertia renderiza el area para crear visita Visit
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        User::findOrFail($id)->delete;
+        User::findOrFail($id)->delete();
 
         Cache::flush();
 
