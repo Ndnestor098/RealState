@@ -344,11 +344,16 @@ class HouseController extends Controller
             $imagePaths = $methodImage->SaveImage($request->file('images')); // Guarda las nuevas imágenes.
 
             // Combina las imágenes antiguas y las nuevas en un solo array.
-            $house->images = json_encode(array_merge($request->input('images_old'), $imagePaths));
-            
+            $oldImages = $request->input('images_old');
+            if (!is_array($oldImages)) {
+                $oldImages = [];
+            }
+
+            $house->images = json_encode(array_merge($oldImages, $imagePaths));
+
         // Si no hay nuevas imágenes pero hay cambios en las imágenes antiguas, las actualiza.
-        } else if($control_image_old){
-            $house->images = json_encode($request->input('images_old'), true);
+        } else if($control_image_old) {
+            $house->images = json_encode($request->input('images_old'));
         }
 
         // Guarda los cambios en el modelo de casa.

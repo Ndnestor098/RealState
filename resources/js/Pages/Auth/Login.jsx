@@ -21,11 +21,6 @@ export default function Login() {
             },
             onSuccess : (page) => {
                 setIsSubmitting(false);
-                if(page.props.status === 200){
-                    window.location.href = "/dashboard"; 
-                }else{
-                    alert("Error en el inicio de sesión");
-                }
             }
         }) 
     };
