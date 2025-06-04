@@ -4,26 +4,39 @@ import { Link, usePage } from '@inertiajs/react';
 import React from 'react';
 import { LinkVisit } from "@/Components/features/LinkVisit";
 
+
+/**
+ * Asegura que el menú este en la parte superior de la pantalla
+ * cuando se desplaza. Si el usuario no ha desplazado la pantalla,
+ * se restablece la posición del menu a su valor predeterminado.
+ * De lo contrario, el menu se fija en la parte superior de la pantalla.
+ */
+const handleScroll = () => {
+    // Asegurarse de que el elemento existe antes de aplicar estilo
+    const menuElement = document.getElementsByClassName("menu")[0];
+    if (window.scrollY == 0) {
+        menuElement.style.top = ""; // Restablecer posición si no se ha desplazado
+        menuElement.style.position = "absolute"; // Menú en posición absoluta
+    } else {
+        menuElement.style.top = "0"; // Fijar menú en la parte superior
+        menuElement.style.position = "fixed"; // Menú en posición fija
+    }
+}
+
+/**
+ * Alterna la visibilidad del menú en pantallas pequeñas.
+ * Si el ancho de la pantalla es menor o igual a 768px, se invierte el estado actual de showMenu.
+ */
+const handleClick = () => {
+    // Alternar la visibilidad del menú en pantallas pequeñas
+    if(window.innerWidth <= 768) getShowMenu(!showMenu);
+}  
+
 export function Header () {
     const [showMenu, getShowMenu] = useState(true); // Estado para controlar la visibilidad del menú
     const location = usePage(); // Obtiene la ubicación actual
-    
-    const handleScroll = () => {
-        // Asegurarse de que el elemento existe antes de aplicar estilo
-        const menuElement = document.getElementsByClassName("menu")[0];
-        if (window.scrollY == 0) {
-            menuElement.style.top = ""; // Restablecer posición si no se ha desplazado
-            menuElement.style.position = "absolute"; // Menú en posición absoluta
-        } else {
-            menuElement.style.top = "0"; // Fijar menú en la parte superior
-            menuElement.style.position = "fixed"; // Menú en posición fija
-        }
-    }
-
-    const handleClick = () => {
-        // Alternar la visibilidad del menú en pantallas pequeñas
-        if(window.innerWidth <= 768) getShowMenu(!showMenu);
-    }   
+    const regex = /property\/\d/; // Expresión regular para verificar si la URL contiene "property" seguido de un número
+    const url = usePage().props.ziggy.location || ''; // Obtiene la URL actual desde Ziggy 
 
     useEffect(() => {
         handleScroll(); // Aplicar estilo inicial al menú
@@ -93,13 +106,11 @@ export function Header () {
                                         <Link href="/contact" className={`${location.url == '/contact' && 'active'}`}>Contact Us</Link>
                                     </li>
                                     <li>
-                                        
                                         {
-                                            location.url.includes('/propertie/') 
+                                            regex.test(url)
                                             ? <LinkVisit />// Muestra el enlace a la visita si hay un ID
                                             : null
                                         } 
-                                        
                                     </li>
                                 </ul>
                                 <a onClick={handleClick} className={`menu-trigger ${showMenu ? 'active' : ''}`}>

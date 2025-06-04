@@ -4,7 +4,7 @@ import { Heading } from '@/Components/layout/Heading';  // Importa el componente
 import { useState, React } from "react";  // Importa useState para manejar el estado del componente
 import { LinkVisit } from '@/Components/features/LinkVisit';  // Importa el componente LinkVisit para mostrar un botón de visita
 import { Gallery } from '@/Components/features/Gallery';  // Importa el componente Gallery para mostrar imágenes en carrusel
-import { Head } from '@inertiajs/react';
+import { Head, usePage } from '@inertiajs/react';
 
 export default function Propertie({ data }) {
     const [activeCarousel, setActiveCarousel] = useState(false);  // Estado para controlar si el carrusel de imágenes está activo
@@ -72,8 +72,16 @@ export default function Propertie({ data }) {
                                     </span>
                                     <p className="price">${price}</p>  {/* Precio de la propiedad */}
                                 </div>
-
-                                <h4>{data.address}</h4>  {/* Dirección de la propiedad */}
+                                
+                                {/* Dirección de la propiedad */}
+                                <h4>
+                                    {data.address}
+                                    
+                                    {/* Componente LinkVisit para agendar visitas */}
+                                    <div className="max-w-48 mt-4 md:hidden">
+                                        <LinkVisit />
+                                    </div>
+                                </h4>  
 
                                 {/* Descripción de la propiedad, renderizada de forma segura */}
                                 <p dangerouslySetInnerHTML={{ __html: data.description }} />
