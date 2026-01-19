@@ -23,14 +23,7 @@ const handleScroll = () => {
     }
 }
 
-/**
- * Alterna la visibilidad del menú en pantallas pequeñas.
- * Si el ancho de la pantalla es menor o igual a 768px, se invierte el estado actual de showMenu.
- */
-const handleClick = () => {
-    // Alternar la visibilidad del menú en pantallas pequeñas
-    if(window.innerWidth <= 768) getShowMenu(!showMenu);
-}  
+
 
 export function Header () {
     const [showMenu, getShowMenu] = useState(true); // Estado para controlar la visibilidad del menú
@@ -60,6 +53,16 @@ export function Header () {
             window.removeEventListener("scroll", handleScroll); // Limpiar evento al desmontar
         };
     }, []);
+
+
+    /**
+     * Alterna la visibilidad del menú en pantallas pequeñas.
+     * Si el ancho de la pantalla es menor o igual a 768px, se invierte el estado actual de showMenu.
+     */
+    const handleClick = () => {
+        // Alternar la visibilidad del menú en pantallas pequeñas
+        if(window.innerWidth <= 768) getShowMenu(!showMenu);
+    }  
 
     return (
         <>
